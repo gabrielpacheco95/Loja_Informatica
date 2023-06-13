@@ -42,7 +42,6 @@ public class Menu extends javax.swing.JFrame {
         jmiCliente = new javax.swing.JMenuItem();
         jmiFornecedor = new javax.swing.JMenuItem();
         jmiProduto = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
 
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
@@ -93,9 +92,6 @@ public class Menu extends javax.swing.JFrame {
         jMenu1.add(jmiProduto);
 
         jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -167,7 +163,6 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;

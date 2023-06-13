@@ -20,7 +20,7 @@ import services.ServicosFactory;
  *
  * @author jbferraz
  */
-public class Produto {
+public class ProdutoDAO {
 
     public void cadastrarProdutoDAO(Produto produtoVO) {
         try {
@@ -45,7 +45,7 @@ public class Produto {
                     + "join editoras e using(ideditora)";
             Statement stm = con.createStatement();
             ResultSet rs = stm.executeQuery(sql);
-            Fornecedor editoraS = ServicosFactory.getEditoraServicos();
+            Fornecedor FornecedorF = ServicosFactory.getFornecedorServicos();
             while (rs.next()) {                
                 Produto p = new Produto();
                 //lado do java |x| (lado do banco)
@@ -54,7 +54,7 @@ public class Produto {
                 p.setMarca(rs.getString("marca"));
                 p.setEstoque(rs.getInt("estoque"));
                 p.setPreco(rs.getFloat("preco"));
-                p.setIdFornecedor(FornecedorS.buscarEditorabyCNPJ(rs.getString("cnpj")));
+                p.setIdFornecedor(FornecedorF.buscarFornecedorbyCNPJ(rs.getString("cnpj")));
                 produto.add(p);
             }
         } catch (SQLException e) {
@@ -79,7 +79,7 @@ public class Produto {
                 p.setMarca(rs.getString("marca"));
                 p.setEstoque(rs.getInt("estoque"));
                 p.setPreco(rs.getFloat("preco"));
-                p.setIdFornecedor(FornecedorS.buscarEditorabyCNPJ(rs.getString("cnpj")));
+                p.setIdFornecedor(fornecedorS.buscarEditorabyCNPJ(rs.getString("cnpj")));
                 produto.add(p);
             }
         } catch (SQLException e) {

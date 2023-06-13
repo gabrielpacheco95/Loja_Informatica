@@ -11,7 +11,7 @@ import java.util.InputMismatchException;
  *
  * @author 311101245
  */
-public class Validadores {
+public class Validadores2 {
 
     public static boolean isCPF(String CPF) { 
         // considera-se erro CPF's formados por uma sequencia de numeros iguais

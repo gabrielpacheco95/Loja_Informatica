@@ -13,7 +13,7 @@ import java.sql.DriverManager;
  *
  * @author jbferraz
  */
-public class Conexao {
+public class Conexao2 {
 
     //cria uma constante com endereço do BD/Schema
     private static String url = "jdbc:mysql://localhost:3306/livraria";

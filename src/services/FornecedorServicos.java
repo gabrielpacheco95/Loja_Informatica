@@ -5,7 +5,7 @@
  */
 package services;
 
-import dao.Fornecedor;
+import dao.FornecedorDAO;
 import dao.DAOFactory;
 import java.util.ArrayList;
 import model.Fornecedor;
@@ -14,26 +14,26 @@ import model.Fornecedor;
  *
  * @author jbferraz
  */
-public class Fornecedor {
+public class FornecedorServicos {
 
     public void cadFornecedor(Fornecedor fVO) {
         Fornecedor fDAO = DAOFactory.getFornecedorDAO();
-        fDAO.cadastrarFornecedorDAO(eVO);
+        fDAO.cadastrarFornecedorDAO(fVO);
     }
     
     public void atualizarFornecedor(Fornecedor fVO){
         Fornecedor fDAO = DAOFactory.getFornecedorDAO();
-        eDAO.atualizaFornecedorByDoc(eVO);
+        fDAO.atualizaFornecedorByDoc(fVO);
     }
     
     public void deletarFornecedor(String cnpj){
         Fornecedor fDAO = DAOFactory.getFornecedorDAO();
-        eDAO.deletarFornecedorDAO(cnpj);
+        fDAO.deletarFornecedorDAO(cnpj);
     }
     
     public Fornecedor buscarFornecedorbyCNPJ(String cnpj){
         Fornecedor fDAO = DAOFactory.getFornecedorDAO();
-        return eDAO.getFornecedorByDoc(cnpj);
+        return fDAO.getFornecedorByDoc(cnpj);
     }
     
     public ArrayList<Fornecedor> getFornecedor() {

@@ -11,22 +11,18 @@ package services;
  */
 public class ServicosFactory {
     private static ClienteServicos cServicos = new ClienteServicos();
-    private static Fornecedor eServicos = new Fornecedor();
-    private static LivroServicos livroS = new LivroServicos();
-    private static VendaLivroServicos vlS = new VendaLivroServicos();
+    private static Fornecedor fServicos = new Fornecedor();
+    private static ProdutoServicos produtoP = new ProdutoServicos();
+ 
     
     public static ClienteServicos getClienteServicos(){
         return cServicos;
     }
-    public static Fornecedor getEditoraServicos(){
-        return eServicos;
+    public static Fornecedor getFornecedorServicos(){
+        return fServicos;
     }
     
-    public static LivroServicos getLivroServicos(){
-        return livroS;
-    }
-    
-    public static VendaLivroServicos getVendaLivros(){
-        return vlS;
+    public static ProdutoServicos getProdutoServicos(){
+        return produtoP;
     }
 }

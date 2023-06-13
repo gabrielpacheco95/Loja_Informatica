@@ -12,27 +12,27 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import model.Fornecedor;
+import model.Cliente;
 
 /**
  *
  * @author jbferraz
  */
-public class Fornecedor {
+public class ClienteDAO2 {
 
-    public void cadastrarFornecedorDAO(Fornecedor eVO) {
+    public void cadastrarClienteDAO(Cliente cVO) {
         try {
             //busca conexão com o BD
             Connection con = Conexao.getConexao();
             //cria espaço de trabalho SQl, é a área no Java onde
             //vamo executar os scripts SQL
             String sql;
-            sql = "insert into fornecedor values (null, ?,?,?,?)";
+            sql = "insert into clientes values (null, ?,?,null,?,?)";
             PreparedStatement pst = con.prepareStatement(sql);
-            pst.setString(1, eVO.getNmFornecedor());
-            pst.setString(2, eVO.getCnpj());
-            pst.setString(3, eVO.getEndereco());
-            pst.setString(4, eVO.getTelefone());
+            pst.setString(1, cVO.getNomeCliente());
+            pst.setString(2, cVO.getCpf());
+            pst.setString(3, cVO.getEndereco());
+            pst.setString(4, cVO.getTelefone());
             pst.executeUpdate();
         } catch (SQLException ex) {
             System.out.println("Erro ao cadastrar!\n"
@@ -40,79 +40,79 @@ public class Fornecedor {
         }
     }//fim cadastrar
 
-    public ArrayList<Fornecedor> getFornecedorDAO() {
-        ArrayList<Fornecedor> fornecedor = new ArrayList<>();
+    public ArrayList<Cliente> getClientesDAO() {
+        ArrayList<Cliente> clientes = new ArrayList<>();
         try {
             Connection con = Conexao.getConexao();
             Statement stat = con.createStatement();
-            String sql = "select * from fornecedor";
+            String sql = "select * from clientes";
             ResultSet rs = stat.executeQuery(sql);
             while (rs.next()) {
-                Fornecedor f = new Fornecedor();
+                Cliente c = new Cliente();
                 //lado do java |x| (lado do banco)
-                f.setIdFornecedor(rs.getInt("ideditora"));
-                f.setNmFornecedor(rs.getString("nomeFornecedor"));
-                f.setCnpj(rs.getString("cnpj"));
-                f.setEndereco(rs.getString("endereco"));
-                f.setTelefone(rs.getString("telefone"));
-                fornecedor.add(f);
+                c.setIdCliente(rs.getInt("idcliente"));
+                c.setNomeCliente(rs.getString("nome"));
+                c.setCpf(rs.getString("cpf"));
+                c.setEndereco(rs.getString("endereco"));
+                c.setTelefone(rs.getString("telefone"));
+                clientes.add(c);
             }
         } catch (SQLException ex) {
             System.out.println("Erro ao Listar!\n"
                     + ex.getMessage());
         }
-        return fornecedor;
+        return clientes;
     }//fim do listar
 
-    public Fornecedor getFornecedorByDoc(String cnpj) {
-        Fornecedor f = new Fornecedor();
+    public Cliente getClienteByDoc(String cpf) {
+        Cliente c = new Cliente();
         try {
             Connection con = Conexao.getConexao();
-            String sql = "select * from fornecedor where cnpj = ?;";
+            String sql = "select * from clientes where cpf = ?;";
             PreparedStatement pst = con.prepareStatement(sql);
-            pst.setString(1, cnpj);
+            pst.setString(1, cpf);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 //lado do java |x| (lado do banco)
-                f.setIdFornecedor(rs.getInt("idFornecedor"));
-                f.setNmFornecedor(rs.getString("nmFornecedor"));
-                f.setCnpj(rs.getString("cnpj"));
-                f.setEndereco(rs.getString("endereco"));
-                f.setTelefone(rs.getString("telefone"));
+                c.setIdCliente(rs.getInt("idcliente"));
+                c.setNomeCliente(rs.getString("nome"));
+                c.setCpf(rs.getString("cpf"));
+                c.setEndereco(rs.getString("endereco"));
+                c.setTelefone(rs.getString("telefone"));
             }
         } catch (SQLException ex) {
-            System.out.println("Erro ao consultar CNPJ!\n"
+            System.out.println("Erro ao consultar CPF!\n"
                     + ex.getMessage());
         }
-        return f;
+        return c;
     }
 
-    public void deletarFornecedorDAO(String cnpj) {
+    public void deletarClienteDAO(String cpf) {
         try {
             Connection con = Conexao.getConexao();
-            String sql = "delete from fornecedor where cnpj = ?";
+            String sql = "delete from clientes where cpf = ?";
             PreparedStatement pst = con.prepareStatement(sql);
-            pst.setString(1, cnpj);
+            pst.setString(1, cpf);
             pst.executeUpdate();
         } catch (SQLException ex) {
-            System.out.println("Erro ao deletar CNPJ!\n"
+            System.out.println("Erro ao deletar CPF!\n"
                     + ex.getMessage());
         }
-    }//fim deletarFornecedor
+    }//fim deletarCliente
 
-    public void atualizaFornecedorByDoc(Fornecedor eVO) {
+    public void atualizaClienteByDoc(Cliente cVO) {
         try {
             Connection con = Conexao.getConexao();
-            String sql = "update fornecedor set nomeFornecedor = ?, endereco = ?, telefone = ?"
-                    + "where cnpj = ?";
+            String sql = "update clientes set nome = ?, endereco = ?, telefone = ? "
+                    + "where cpf = ?";
             PreparedStatement pst = con.prepareStatement(sql);
-            pst.setString(1, eVO.getNmFornecedor());
-            pst.setString(5, eVO.getCnpj());
-            pst.setString(2, eVO.getEndereco());
-            pst.setString(3, eVO.getTelefone());
+            pst.setString(1, cVO.getNomeCliente());
+            pst.setString(2, cVO.getEndereco());
+            pst.setString(3, cVO.getTelefone());
+            pst.setString(4, cVO.getCpf());
             pst.executeUpdate();
         } catch (SQLException ex) {
-            System.out.println("Erro ao atualizar CNPJ!\n"
+            System.out.println("Erro ao atualizar CPF!\n"
                     + ex.getMessage());
         }
     }

@@ -9,13 +9,13 @@ package dao;
  *
  * @author jbferraz
  */
-public class DAOFactory {
+public class DAOFactory2 {
 
     private static ClienteDAO cDAO = new ClienteDAO();
-    private static Fornecedor fDAO = new Fornecedor();
+    private static FornecedorDAO fDAO = new FornecedorDAO();
     private static Produto produtoDAO = new Produto();
 
-    public DAOFactory() {
+    public DAOFactory2() {
     }
 
     
@@ -27,12 +27,12 @@ public class DAOFactory {
         DAOFactory.cDAO = cDAO;
     }
 
-    public static Fornecedor getfDAO() {
+    public static FornecedorDAO getfDAO() {
         return fDAO;
     }
 
-    public static void setfDAO(Fornecedor fDAO) {
-        DAOFactory.fDAO = fDAO;
+    public static void setfDAO(FornecedorDAO fDAO) {
+        DAOFactory2.fDAO = fDAO;
     }
 
     public static Produto getProdutoDAO() {
@@ -40,7 +40,7 @@ public class DAOFactory {
     }
 
     public static void setProdutoDAO(Produto produtoDAO) {
-        DAOFactory.produtoDAO = produtoDAO;
+        DAOFactory2.produtoDAO = produtoDAO;
     }
 
 }

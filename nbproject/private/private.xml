@@ -3,8 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/gabri/OneDrive/Área%20de%20Trabalho/Projetos/Loja_Informatica/src/dao/Fornecedor.java</file>
-            <file>file:/C:/Users/gabri/OneDrive/Área%20de%20Trabalho/Projetos/Loja_Informatica/src/model/Produto.java</file>
+            <file>file:/C:/Users/311101245/Documents/NetBeansProjects/Loja_Informatica/src/services/FornecedorServicos.java</file>
+            <file>file:/C:/Users/311101245/Documents/NetBeansProjects/Loja_Informatica/src/view/Menu.java</file>
+            <file>file:/C:/Users/311101245/Documents/NetBeansProjects/Loja_Informatica/src/dao/ProdutoDAO.java</file>
+            <file>file:/C:/Users/311101245/Documents/NetBeansProjects/Loja_Informatica/src/view/jfFornecedor.java</file>
+            <file>file:/C:/Users/311101245/Documents/NetBeansProjects/Loja_Informatica/src/view/jfProduto.java</file>
+            <file>file:/C:/Users/311101245/Documents/NetBeansProjects/Loja_Informatica/src/services/ClienteServicos.java</file>
+            <file>file:/C:/Users/311101245/Documents/NetBeansProjects/Loja_Informatica/src/model/Cliente.java</file>
+            <file>file:/C:/Users/311101245/Documents/NetBeansProjects/Loja_Informatica/src/services/ProdutoServicos.java</file>
+            <file>file:/C:/Users/311101245/Documents/NetBeansProjects/Loja_Informatica/src/services/ServicosFactory.java</file>
+            <file>file:/C:/Users/311101245/Documents/NetBeansProjects/Loja_Informatica/src/model/Fornecedor.java</file>
+            <file>file:/C:/Users/311101245/Documents/NetBeansProjects/Loja_Informatica/src/view/jfCliente.java</file>
+            <file>file:/C:/Users/311101245/Documents/NetBeansProjects/Loja_Informatica/src/loja_informatica/LOJA_INFORMATICA.java</file>
+            <file>file:/C:/Users/311101245/Documents/NetBeansProjects/Loja_Informatica/src/model/Produto.java</file>
         </group>
     </open-files>
 </project-private>
