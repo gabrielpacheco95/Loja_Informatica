@@ -27,8 +27,8 @@ public class Fornecedor {
         this.telefone = telefone;
     }
 
-    public Fornecedor(int idFornecedor, String nmFornecedor, String cnpj, String endereco, String telefone, String gerente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Fornecedor(String idFornecedor, String nmFornecedor, String cnpj, String endereco, String telefone) {
+        
     }
 
     public int getIdFornecedor() {
